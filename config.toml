@@ -1,0 +1,15 @@
+baseURL = "https://www.thestrategists.ca/"     # change to your domain later
+languageCode = "en-us"
+title = "The Strategists"
+theme = "strategists-theme"
+paginate = 10
+enableInlineShortcodes = true
+
+[params]
+  description = "Politics. Irreverent. Strategically wrong at least twice per episode."
+  twitter = "yourhandle"
+  patreon = "https://patreon.com/thestrategists"
+  shopify = "https://thestrategists.myshopify.com"
+
+# Google Analytics (replace with your ID if you have one)
+googleAnalytics = "G-XXXXXXXXXX"
