@@ -6,16 +6,28 @@ theme = "castanet"
 [pagination]
   pagerSize = 10
 
-enableInlineShortcodes = true
+googleAnalytics = "G-XXXXXXXXXX"
 
 [params]
+  mainSections = ["episode"]
   description = "Politics. Irreverent. Strategically wrong at least twice per episode."
-  twitter = "yourhandle"
-  patreon = "https://patreon.com/thestrategists"
-  shopify = "https://thestrategists.myshopify.com"
+  
+  [params.feed]
+    copyright = "Copyright 2024 The Strategists"
+    itunes_subtitle = "Politics. Irreverent. Strategically wrong at least twice per episode."
+    itunes_author = "The Strategists"
+    itunes_summary = "Politics. Irreverent. Strategically wrong at least twice per episode."
+    itunes_owner_name = "The Strategists"
+    itunes_owner_email = "your-email@example.com"
+    itunes_image = "https://strategists-site.netlify.app/images/podcast-cover.jpg"
+    itunes_top_category = "News"
+    itunes_first_sub_category = "Politics"
+    language = "en-us"
+    explicit = "no"
 
-# Disable taxonomies if you're not using them
-disableKinds = ["taxonomy", "term"]
+  [params.social]
+    twitter = "yourhandle"
+    patreon = "thestrategists"
 
-# Google Analytics (replace with your ID if you have one)
-googleAnalytics = "G-XXXXXXXXXX"
+  [params.links]
+    patreon = "https://patreon.com/thestrategists"

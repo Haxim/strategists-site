@@ -2,32 +2,21 @@ backend:
   name: git-gateway
   branch: main
 
-
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "episodes"
+  - name: "episode"
     label: "Episodes"
-    folder: "content/episodes"
+    folder: "content/episode"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Episode Number", name: "episode_number", widget: "number" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Acast Embed URL", name: "acast_embed", widget: "string" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
-      - { label: "Transcript", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list", allow_add: true }
-
-  - name: "pages"
-    label: "Pages"
-    folder: "content"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Episode Number", name: "episode", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Audio File URL", name: "podcast", widget: "string"}
+      - {label: "Duration", name: "podcast_duration", widget: "string"}
+      - {label: "Explicit", name: "explicit", widget: "select", options: ["yes", "no"], default: "no"}
+      - {label: "Body", name: "body", widget: "markdown"}
