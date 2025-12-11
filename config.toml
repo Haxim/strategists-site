@@ -1,7 +1,7 @@
 baseURL = "https://strategists-site.netlify.app/"
 languageCode = "en-us"
 title = "The Strategists"
-theme = "strategists-theme"
+theme = "castanet"
 
 [pagination]
   pagerSize = 10
