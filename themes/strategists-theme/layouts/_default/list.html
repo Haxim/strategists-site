@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section>
+  <h2>All Episodes</h2>
+  {{ range .Pages }}
+  <article style="margin-bottom: 2rem;">
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <p><small>{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.episode_number }} • Episode {{ . }}{{ end }}</small></p>
+    {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+  </article>
+  {{ end }}
+</section>
+{{ end }}
