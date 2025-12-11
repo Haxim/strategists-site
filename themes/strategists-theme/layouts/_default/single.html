@@ -1,57 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{{ .Title }} | The Strategists</title>
-  <meta name="description" content="{{ .Params.description }}">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body>
-  <header>
-    <h1><a href="{{ "/" | relLangURL }}">The Strategists</a></h1>
-    <nav><a href="/episodes">Episodes</a> • <a href="/about">About</a></nav>
-  </header>
-
-  <main>
-    <article>
-      <h2>{{ .Title }}</h2>
-      <p><small>{{ .Date.Format "Jan 2, 2006" }} • Episode {{ .Params.episode_number }}</small></p>
-
-      {{ if .Params.acast_embed }}
-      <div class="player">
-        <!-- use the provided Acast embed URL -->
-        <iframe src="{{ .Params.acast_embed }}" width="100%" height="200" frameborder="0" allow="autoplay"></iframe>
-      </div>
-      {{ end }}
-
-      <section class="desc">
-        <p>{{ .Params.description }}</p>
-      </section>
-
-      <section class="transcript">
-        {{ .Content }}
-      </section>
-
-      <section class="cta">
-        <a href="{{ .Site.Params.patreon }}">Get bonus episodes on Patreon →</a>
-      </section>
-    </article>
-  </main>
-
-  <footer>
-    <p>&copy; The Strategists</p>
-  </footer>
-  <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-  </script>
-</body>
-</html>
+{{ define "main" }}
+<article>
+  <h2>{{ .Title }}</h2>
+  <p><small>{{ .Date.Format "Jan 2, 2006" }} • Episode {{ .Params.episode_number }}</small></p>
+  {{ if .Params.acast_embed }}
+  <div class="player">
+    <!-- use the provided Acast embed URL -->
+    <iframe src="{{ .Params.acast_embed }}" width="100%" height="200" frameborder="0" allow="autoplay"></iframe>
+  </div>
+  {{ end }}
+  <section class="desc">
+    <p>{{ .Params.description }}</p>
+  </section>
+  <section class="transcript">
+    {{ .Content }}
+  </section>
+  <section class="cta">
+    <a href="{{ .Site.Params.patreon }}">Get bonus episodes on Patreon →</a>
+  </section>
+</article>
+{{ end }}
