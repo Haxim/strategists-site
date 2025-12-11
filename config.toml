@@ -1,4 +1,4 @@
-baseURL = "https://www.thestrategists.ca/"     # change to your domain later
+baseURL = "https://strategists-site.netlify.app/"
 languageCode = "en-us"
 title = "The Strategists"
 theme = "strategists-theme"
