@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: Haxim/strategists-site
+  name: git-gateway
   branch: main
 
 
@@ -31,3 +30,4 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+
