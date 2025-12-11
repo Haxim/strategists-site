@@ -1,4 +1,14 @@
 {{ define "main" }}
-<h2>Recent Episodes</h2>
-<!-- your homepage content -->
+<section>
+  <h2>Recent Episodes</h2>
+  {{ range first 10 .Site.RegularPages }}
+    {{ if eq .Type "episodes" }}
+    <article>
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p><small>{{ .Date.Format "Jan 2, 2006" }} • Episode {{ .Params.episode_number }}</small></p>
+      <p>{{ .Params.description }}</p>
+    </article>
+    {{ end }}
+  {{ end }}
+</section>
 {{ end }}
