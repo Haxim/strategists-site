@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: Haxim/strategists-site
+  branch: main
+
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "episodes"
+    label: "Episodes"
+    folder: "content/episodes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Episode Number", name: "episode_number", widget: "number" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Acast Embed URL", name: "acast_embed", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Transcript", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
